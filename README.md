@@ -16,6 +16,7 @@ My Todo is a user-friendly todo application designed for users to maintain their
 ## Features
 
 - Users can add a todo item, including task details and setting priorities (high, medium, low).
+- Users can filter the todos according to their priorities.
 - Users can mark a todo as completed.
 - Users can edit the todo item.
 - Users can delete the todo item.
