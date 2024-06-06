@@ -16,12 +16,15 @@ const TodoCard = ({ title, description, id, isCompleted, priority }) => {
     dispatch(deleteTodo(id));
   }
 
+  console.log("is completed", isCompleted);
+
   return (
     <div className="bg-white rounded-md flex justify-between items-center p-3 border">
       <input
         onChange={toggleState}
         type="checkbox"
         name="complete"
+        checked={isCompleted}
         id="complete"
         className="mr-3"
       />
