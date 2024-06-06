@@ -16,10 +16,8 @@ const TodoCard = ({ title, description, id, isCompleted, priority }) => {
     dispatch(deleteTodo(id));
   }
 
-  console.log("is completed", isCompleted);
-
   return (
-    <div className="bg-white rounded-md flex justify-between items-center p-3 border">
+    <div className="bg-white rounded-md flex  justify-between space-x-3 items-center p-3 border overflow-auto">
       <input
         onChange={toggleState}
         type="checkbox"
@@ -29,7 +27,7 @@ const TodoCard = ({ title, description, id, isCompleted, priority }) => {
         className="mr-3"
       />
       <p className="font-semibold flex-1">{title}</p>
-      <div className="flex-1 flex items-center gap-3">
+      <div className="md:flex-1 flex items-center gap-3">
         <div
           className={`size-3 rounded-full 
           ${priority === "high" ? "bg-red-500 " : ""}
@@ -46,8 +44,8 @@ const TodoCard = ({ title, description, id, isCompleted, priority }) => {
           <p className="text-red-500">Pending</p>
         )}
       </div>
-      <p className="flex-[2]">{description}</p>
-      <div className="space-x-5">
+      <p className="flex-[2] ">{description}</p>
+      <div className="flex flex-row  space-x-3 md:space-x-5">
         <DeleteAlert setResponse={setResponse}></DeleteAlert>
         <TodoUpdateModal id={id}></TodoUpdateModal>
       </div>
